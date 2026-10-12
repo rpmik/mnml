@@ -108,7 +108,8 @@ body {
     font-size: 1.8rem;
     font-weight: var(--font-weight-normal);
     line-height: 1.5666;
-    width: 100%;
+    min-width: var(--site-width);        /* Enforce minimum width */
+    max-width: 100vw;                  /* Allow full viewport width on larger screens */
     margin: 0;
     text-rendering: geometricPrecision;
     font-feature-settings: "kern" 1;
@@ -447,8 +448,9 @@ textarea:focus {
 }
 
 main {
+    width: 100%;                      /* Allow full width up to constraint */
+    max-width: var(--site-width);     /* Keep minimum size enforced */
     margin: 0 auto;
-    max-width: var(--site-width);
     padding: 2rem;
 }
 
@@ -1155,10 +1157,9 @@ sup a:active {
 }
 
 footer {
-    color: var(--accent-3);
-    font-size: 1.6rem;
-    margin: 0 auto 2rem;
-    max-width: var(--site-width);
+    width: 100%;                      /* Allow full width up to constraint */
+    min-width: var(--site-width);     /* Enforce minimum width */
+    max-width: var(--site-width);     /* Keep minimum size enforced */
     padding: 0.5rem 2rem 3rem;
     text-align: center;
 }
@@ -1272,7 +1273,7 @@ a.tinylytics_webring {
     gap: 1rem !important;
     width: 100% !important;
     margin: 3rem auto !important;
-    width: 100% !important;
+    aspect-ratio: auto;
 }
 
 .microblog_collection img {
