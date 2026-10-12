@@ -11,6 +11,7 @@
   <meta property="og:title" content="{{ or .Title .Site.Title | truncate 55 | plainify | htmlUnescape }}">
   <meta name="twitter:title" content="{{ or .Title .Site.Title | plainify | htmlUnescape }}">
   <meta name="twitter:card" content="summary">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   {{- if .IsHome }}
   <meta name="description" content="{{ .Site.Params.itunes_description | truncate 160 | plainify }}">
   <meta name="og:description" content="{{ .Site.Params.itunes_description | truncate 65 | plainify }}">
